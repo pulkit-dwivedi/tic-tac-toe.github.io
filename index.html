@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+                        body{
+                margin: 0;
+                padding: 0;
+                background: black;
+                overflow: hidden;
+            }
+            i{
+                position: absolute;
+                background: linear-gradient(transparent,red);
+                height: 60px;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                animation: animate 5s infinite;
+            }
+            @keyframes animate{
+                0%{
+                    transform: translateY(-200px);
+                }
+                100%{
+                    transform: translateY(800px);
+                }
+            }
+            i:nth-child(2n+1){
+                background: linear-gradient(transparent,blue);
+            }
+            i:nth-child(2n+2){
+                background: linear-gradient(transparent,yellow);
+            }
+            i:nth-child(2n+4){
+                background: linear-gradient(transparent,white);
+            }
+            
+            i:nth-child(2n+6){
+                background: linear-gradient(transparent,red);
+            }
+        </style>
+        <title>tic-tac-toe</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="body">
+        <div class="container">
+            <h1 class="heading">TIC-TAC-TOE</h1>
+            <div class="inside">
+            <div class="box border-left border-top"><span class="boxtext"></span></div>
+            <div class="box border-top"><span class="boxtext"></span></div>
+            <div class="box border-right border-top"><span class="boxtext"></span></div>
+            <div class="box border-left"><span class="boxtext"></span></div>
+            <div class="box"><span class="boxtext"></span></div>
+            <div class="box border-right"><span class="boxtext"></span></div>
+            <div class="box border-left border-bottom"><span class="boxtext"></span></div>
+            <div class="box border-bottom"><span class="boxtext"></span></div>
+            <div class="box border-right border-bottom"><span class="boxtext"></span></div>
+            </div>
+           <div class="forscoreboard">
+               <h1 class="turn">Let's Play</h1>
+               <img class="img" src="giphy.gif">
+               <h2 id="winner"></h2>
+               <button class="reset">RESET</button>
+           </div>
+        </div>
+        <audio id="soundtrack" src="background-music.mp3" type="audio/ogg"></audio>
+        <script src="script.js"></script>
+        <script>
+             let amount=200;
+                let body=document.querySelector(".body");
+                let i=0;
+                while(i<amount){
+                    let itag=document.createElement('i');
+                    let size=Math.random()*5;
+                    let posy=Math.floor(Math.random()*window.innerHeight)
+                    let pos=Math.floor(Math.random()*window.innerWidth)
+                    let delay=Math.random()*(-20)
+                    let duration=Math.random()*20;
+                    itag.style.width=0.2+size+"px";
+                    itag.style.left=pos+"px";
+                    itag.style.animationDelay=delay+'s';
+                    itag.style.animationDuration=duration+'s';
+                    body.appendChild(itag);
+                    i++;
+                }
+        </script>
+    </body>
+</html>

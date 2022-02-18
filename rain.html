@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>rain-down</title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                background: black;
+            }
+            i{
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+
+        <script>
+            function rain(){
+                let amount=5;
+                let body=document.querySelector('body');
+                let i=0;
+                while(i<amount){
+                    let i=document.createElement('i');
+                    body.appendChild(i);
+                    i++;
+                }
+            
+            } 
+            rain();
+        </script>
+    </body>
+</html>
